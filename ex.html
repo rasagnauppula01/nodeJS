@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a="search:rasagna&name:uppula";
+
+        var obj={}
+        console.log(a.split("&"));
+        //["search:rasagna","name:uppula"]
+
+
+        a.split("&").forEach((val,ind)=>{
+            //val->search:rasagna    name:uppula
+
+            console.log(val.split(":"));
+            //[search:rasagna]    [name:uppula]
+
+            var [key,value]=val.split(":");
+            console.log(key);
+            console.log(value);
+            obj[key]=value;
+        });
+
+        console.log(JSON.stringify(obj));
+    </script>
+</body>
+</html>
